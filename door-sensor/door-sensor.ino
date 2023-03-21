@@ -1,9 +1,11 @@
-void setup() {
-  // put your setup code here, to run once:
+#define WORK_IND_LED  6   /* P0.06 (DIP10) */
 
+void setup() {
+  pinMode(WORK_IND_LED, OUTPUT);
+  digitalWrite(WORK_IND_LED, LOW);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  digitalWrite(WORK_IND_LED, LOW == digitalRead(WORK_IND_LED) ? HIGH : LOW);
+  delay(500);
 }
